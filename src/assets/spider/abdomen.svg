@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="182" height="156" viewBox="0 0 182 156">
+  <defs>
+    <radialGradient id="shell" cx="35%" cy="22%" r="78%">
+      <stop stop-color="#5b719a"/>
+      <stop offset=".6" stop-color="#2d3a5b"/>
+      <stop offset="1" stop-color="#141d33"/>
+    </radialGradient>
+  </defs>
+  <path d="M91 5c50 0 81 29 81 67 0 42-35 78-81 78S10 114 10 72C10 34 41 5 91 5Z" fill="url(#shell)" stroke="#0c1326" stroke-width="7"/>
+  <path d="M56 40 91 51l35-11-9 16-26 12-26-12zm8 29 27 11 27-11-6 13-21 12-21-12z" fill="#db6d46"/>
+  <path d="M29 63c4-19 17-32 38-38" fill="none" stroke="#b2c1df" stroke-width="4" stroke-linecap="round" opacity=".45"/>
+</svg>

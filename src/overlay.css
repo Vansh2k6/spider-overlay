@@ -1,0 +1,29 @@
+.fx-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: var(--fx-z-index, 100);
+}
+.fx-error {
+  position: fixed;
+  left: var(--space-4, 1rem);
+  bottom: var(--space-4, 1rem);
+  z-index: var(--fx-z-index, 100);
+  pointer-events: none;
+  padding: var(--space-4, 1rem);
+  background: var(--color-ink-surface, #0c1528);
+  color: var(--color-text, #faf9f6);
+}
+.fx-capacity {
+  position: fixed;
+  bottom: calc(var(--footer-height, 3.5rem) + var(--space-4, 1rem));
+  left: var(--space-4, 1rem);
+  z-index: var(--fx-z-index, 100);
+  color: var(--color-white, #faf9f6);
+  background: var(--color-ink, #080d1b);
+  padding: var(--space-2, 0.5rem) var(--space-4, 1rem);
+  font-size: 0.75rem;
+  pointer-events: none;
+}
