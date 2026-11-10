@@ -71,6 +71,7 @@ export const SILK = {
 
 export const WEB = {
   maxStrands: 500, expiry: Infinity,
+  maxAutomaticAnchors: 48,
   minLength: 2, slack: 1.015, maxSlack: 12, sagFraction: 0.025,
   contactEpsilon: 0.000001, pointRadius: 3, sweepLimit: 32,
   remeshMin: 0.5, remeshMax: 2,

@@ -19,10 +19,10 @@ import { beginPounce, createPounce, stepPounce } from "./spider/pounce.js";
 
 const lifecycle = import.meta.env?.DEV ? { setups: 0, disposals: 0, activeEngines: 0, activeRequests: 0 } : null;
 
-export function createFxEngine(onError: (message: string) => void, navHeight: number) {
+export function createFxEngine(onError: (message: string) => void, navHeight: number, automaticAnchors: boolean) {
   const spider = createSpider();
   const legs = createLegs();
-  const anchors = createAnchors(inputChanged);
+  const anchors = createAnchors(inputChanged, automaticAnchors);
   const ropes = createRopes();
   const web = createWeb(ropes, anchors);
   const orbs = createOrbs(navHeight);

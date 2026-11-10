@@ -1,20 +1,23 @@
 import { useEffect, useState } from "react";
 import { mountSpider } from "../index.js";
+import type { SpiderOptions } from "../index.js";
 import { FX } from "../config/fx.js";
 import { useMountCounter } from "../hooks/useMountCounter.js";
 
-export function FxCanvas({ active = true, navHeight }: { active?: boolean; navHeight?: number }) {
+type FxCanvasProps = Pick<SpiderOptions, "navHeight" | "automaticAnchors"> & { active?: boolean };
+
+export function FxCanvas({ active = true, navHeight, automaticAnchors }: FxCanvasProps) {
   const canvasRef = useMountCounter<HTMLCanvasElement>("fx");
   const [error, setError] = useState<string>();
   useEffect(() => {
     if (!canvasRef.current || !active) return;
     const canvas = canvasRef.current;
     try {
-      return mountSpider(canvas, { navHeight, onError: setError });
+      return mountSpider(canvas, { navHeight, automaticAnchors, onError: setError });
     } catch (error) {
       setError(error instanceof Error ? error.message : "Spider overlay unavailable.");
     }
-  }, [active, canvasRef, navHeight]);
+  }, [active, canvasRef, navHeight, automaticAnchors]);
   useEffect(() => {
     if (active || !canvasRef.current) return;
     const canvas = canvasRef.current;

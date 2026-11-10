@@ -4,19 +4,20 @@ export { requestWebClear, setEffectsHidden } from "./fx/input.js";
 
 export interface SpiderOptions {
   navHeight?: number;
+  automaticAnchors?: boolean;
   onError?: (message: string) => void;
 }
 
 let owner: symbol | undefined;
 
 /** Mount the full-viewport overlay and return its teardown function. */
-export function mountSpider(canvas: HTMLCanvasElement, { navHeight = 0, onError }: SpiderOptions = {}) {
+export function mountSpider(canvas: HTMLCanvasElement, { navHeight = 0, automaticAnchors = true, onError }: SpiderOptions = {}) {
   if (owner) throw new Error("Mount one spider overlay per page.");
   const instance = Symbol();
   const engine = createFxEngine((message) => {
     release("error");
     onError?.(message);
-  }, navHeight);
+  }, navHeight, automaticAnchors);
 
   function release(status: "inactive" | "error") {
     if (owner !== instance) return;
