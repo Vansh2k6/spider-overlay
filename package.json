@@ -36,7 +36,7 @@
   },
   "scripts": {
     "build": "node scripts/build.mjs",
-    "prepack": "npm run build"
+    "prepare": "npm run build"
   },
   "dependencies": {
     "gsap": "^3.15.0"
