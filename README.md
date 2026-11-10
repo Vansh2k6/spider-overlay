@@ -90,4 +90,4 @@ Builds are checked on Node.js 24. Install the generated `.tgz` in a separate pro
 
 ## License
 
-The component source and original spider artwork are available under the [MIT License](LICENSE). The SVGs are the editable originals for the PNG sprites bundled with the package. Runtime dependencies have their own licenses.
+The [MIT License](LICENSE) covers the component code. The four PNG sprites from the portfolio are included with permission for this repository. Runtime dependencies have their own licenses.

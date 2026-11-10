@@ -12,9 +12,6 @@ execFileSync(process.execPath, [fileURLToPath(import.meta.resolve("typescript/bi
   { cwd: fileURLToPath(project), stdio: "inherit" });
 await mkdir(new URL("assets/", output), { recursive: true });
 await Promise.all([
-  cp(new URL("assets/spider/", source), new URL("assets/spider/", output), {
-    recursive: true,
-    filter: (path) => !path.endsWith(".svg"),
-  }),
+  cp(new URL("assets/spider/", source), new URL("assets/spider/", output), { recursive: true }),
   cp(new URL("overlay.css", source), new URL("overlay.css", output)),
 ]);
